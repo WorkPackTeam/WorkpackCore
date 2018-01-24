@@ -25,7 +25,7 @@ namespace WorkpackMVC
       _userRepository = userRepository;
     } 
 
-    // GET: api/values
+    // GET: api/values //Test
     [HttpGet]
     public IEnumerable<User> Get()
     {
