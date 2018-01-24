@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,7 +25,7 @@ namespace WorkpackMVC
       _userRepository = userRepository;
     } 
 
-    // GET: api/values //Test
+    // GET: api/values //Test12
     [HttpGet]
     public IEnumerable<User> Get()
     {
@@ -36,7 +36,7 @@ namespace WorkpackMVC
     }
 
     //// POST api/values
-    [HttpPost]
+    [HttpPost] 
     public OperationResult Post([FromBody]User user, [FromBody]UserRole[] userRole)
     {
       var identity = (ClaimsIdentity)User.Identity;
