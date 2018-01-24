@@ -23,7 +23,7 @@ namespace WorkpackMVC
     {
       _mapper = mapper;
       _userRepository = userRepository;
-    }
+    } 
 
     // GET: api/values
     [HttpGet]
