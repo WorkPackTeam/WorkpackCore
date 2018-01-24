@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/$tf
+/BusinessLibrary/bin/Debug/netcoreapp2.0
+/BusinessLibrary/obj
+/CommonLibrary/bin/Debug/netcoreapp2.0
+/CommonLibrary/obj
+/DataAccessLibrary/bin/Debug/netcoreapp2.0
+/DataAccessLibrary/obj
+/DomainModelLibrary/bin/Debug/netcoreapp2.0
+/DomainModelLibrary/obj
+/WorkpackMVC/.vs
+/WorkpackMVC/bin/Debug/netcoreapp2.0
+/WorkpackMVC/node_modules
+/WorkpackMVC/obj
