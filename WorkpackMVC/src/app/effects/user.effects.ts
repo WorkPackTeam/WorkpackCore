@@ -1,10 +1,12 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { UserService } from "./../services/user.service";
 import { Observable } from "rxjs/Observable";
 import { Action } from './../reducers/action.interface';
 import * as UserAction from './../actions/user.actions';
 import { User } from "./../models/user";
+import * as _ from 'lodash';
+import { UserRole } from 'app/models/userRole';
 
 @Injectable()
 export class UserEffects {
@@ -16,10 +18,19 @@ export class UserEffects {
     @Effect()
     add_user$: Observable<Action> = this.actions$
         .ofType(UserAction.ActionTypes.ADD_USER)
-        .switchMap((action: Action) => {
-            return this.userService.addUser(action.payload);
+      .switchMap((action: Action) => {
+          debugger;
+          let userRole: UserRole[] = [];
+          _.forEach(action.payload.userRole, function (value) {
+            if (value.selected) {
+                debugger;
+                userRole.push({ UserRolesID: 0, UserID: 0, RoleID: value.id });
+              }
+          });
+          return this.userService.addUser(action.payload,userRole);
         })
-        .map((data) => {
+      .map((data) => {
+            debugger;
             var user = data as User;
             return new UserAction.AddUserSuccessAction(user);
         });

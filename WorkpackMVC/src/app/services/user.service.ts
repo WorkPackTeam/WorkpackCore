@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import { User } from './../models/user';
+import { UserRole } from 'app/models/userRole';
 import { Observable } from 'rxjs/Observable';
-
 
 @Injectable()
 export class UserService {
@@ -13,11 +13,11 @@ export class UserService {
     constructor(private httpClient: HttpClient) {
     }
 
-    addUser(user: User): Observable<Object> {
-        localStorage.setItem('user', JSON.stringify(user));
-        return Observable.of(user);
-        //return this.http.post('api/user', JSON.stringify(user),this.options).map(this.extractData)
-        //    .catch(this.handleError)
+    addUser(user: User, userRole: UserRole[]): Observable<Object> {
+        //localStorage.setItem('user', JSON.stringify(user));
+        //return Observable.of(user);
+      return this.httpClient.post('api/UsersData', { user: JSON.stringify(user), userRole: JSON.stringify(userRole) })
+            .catch(this.handleError)
     }
 
     getUser(id: number): Observable<Object> {

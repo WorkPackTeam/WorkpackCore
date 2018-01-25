@@ -91,6 +91,7 @@ namespace Workpack
       services.AddScoped<IBLDesignationRepository, BLDesignationRepository>();
       services.AddScoped<IBLDepartmentRepository, BLDepartmentRepository>();
       services.AddScoped<IBLEmailTemplateRepository, BLEmailTemplateRepository>();
+      services.AddScoped<IBLEstimationTaskDetailRepository, BLEstimationTaskDetailRepository>();
       services.AddScoped<IBLRoleRepository, BLRoleRepository>();
       services.AddScoped<IBLUserRepository, BLUserRepository>();
 

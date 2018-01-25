@@ -1,5 +1,6 @@
-﻿import { Action } from './../reducers/action.interface';
+import { Action } from './../reducers/action.interface';
 import { User } from "./../models/user";
+import { UserRole } from 'app/models/userRole';
 
 export const ActionTypes = {
     ADD_USER: 'Add user',
@@ -14,7 +15,7 @@ export const ActionTypes = {
 
 export class AddUserAction implements Action {
     type = ActionTypes.ADD_USER;
-    constructor(public payload: User) { }
+    constructor(public payload:any) { }
 }
 
 export class AddUserSuccessAction implements Action {

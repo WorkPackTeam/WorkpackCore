@@ -9,7 +9,7 @@ import * as fromRoot from './../../../../reducers/index';
 import { ToasterService } from 'angular2-toaster';
 import { GetDepartmentAction } from './../../../../actions/department.actions';
 import { GetDesignationAction } from './../../../../actions/designation.actions';
-import { GetAllUserAction } from 'app/actions/user.actions';
+import { GetAllUserAction, AddUserAction } from 'app/actions/user.actions';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'app/models/user';
 import { GetRoleAction } from 'app/actions/role.actions';
@@ -76,7 +76,14 @@ export class UserComponent implements OnInit {
         })
       });
       console.log(formValues);
-      // this.store.dispatch();
+      //let userRole: UserRole[] = [];
+      //_.forEach(formValues.userRole, function (value) {
+      //  if (value.selected) {
+      //      debugger;
+      //      userRole.push({ UserRolesID: 0, UserID: 0, RoleID: value.id });
+      //    }
+      //});
+      this.store.dispatch(new AddUserAction(formValues));
 
     }
   }

@@ -69,7 +69,7 @@ namespace WorkpackMVC
     {
       User user = null;
       try
-      {
+      { 
         user = _userRepository.GetuserByID(id);
         user.EntityState = DomainModelLibrary.EntityState.Deleted;
         _userRepository.Removeuser(user);
